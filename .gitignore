@@ -1,0 +1,23 @@
+# Build results
+bin/
+obj/
+out/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# Visual Studio Code
+.vscode/
+
+# Packages
+*.nupkg
+*.snupkg
+packages/
+
+/CarFactory/.vs/CarFactory
