@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Modules.CarFactory.Core.Domain;
+using Modules.CarFactory.Core.Domain.Car;
 
 namespace Modules.CarFactory.Infraestructure
 {
@@ -12,10 +13,10 @@ namespace Modules.CarFactory.Infraestructure
         {
             Cars.AddRange(new List<Car>
             {
-                Car.Create(CarModel.Sport),
-                Car.Create(CarModel.Offroad),
-                Car.Create(CarModel.Sedan),
-                Car.Create(CarModel.Suv)
+                new Sport(),
+                new Offroad(),
+                new Sedan(),
+                new Suv()
             });
         }
     }
