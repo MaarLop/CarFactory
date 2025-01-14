@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Modules.CarFactory.Core.Dto;
 using Modules.CarFactory.Core.Features.CreateSale;
 using Modules.CarFactory.Core.Features.GetTotalVolume;
+using Modules.CarFactory.Core.Features.GetTotalVolumeByDistributionId;
 
 namespace CarFactory.Controllers
 {
@@ -32,6 +33,15 @@ namespace CarFactory.Controllers
         public async Task<IActionResult> GetTotalVolume()
         {
             var totalVolumeRequest = new GetTotalVolumeRequest();
+            var response = await _mediator.Send(totalVolumeRequest);
+            return Ok(response);
+        }
+
+        [HttpGet]
+        [Route("totalVolumesByDistributionId")]
+        public async Task<IActionResult> GetTotalVolumeByDistributionId(int distributionId)
+        {
+            var totalVolumeRequest = new GetTotalVolumeByDistributionIdRequest(distributionId);
             var response = await _mediator.Send(totalVolumeRequest);
             return Ok(response);
         }

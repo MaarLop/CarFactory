@@ -14,8 +14,10 @@ namespace Modules.CarFactory.Infraestructure
         }
 
         public decimal GetTotalVolume()
+        public decimal GetTotalVolume(int? distributionId = null)
         {
             return _context.Sales
+                .Where(s => distributionId == null || s.DistributionCenterId == distributionId)
                 .Join(
                     inner: _context.Cars,
                     outerKeySelector: s => s.CarId,

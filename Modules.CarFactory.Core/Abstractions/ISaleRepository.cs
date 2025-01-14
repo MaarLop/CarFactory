@@ -10,6 +10,7 @@ namespace Modules.CarFactory.Core.Abstractions
     public interface ISaleRepository
     {
         decimal GetTotalVolume();
+        decimal GetTotalVolume(int? distributionId = null);
         Sale Save(Sale sale);
     }
 }
