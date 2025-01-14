@@ -13,7 +13,26 @@ namespace Modules.CarFactory.Infraestructure
             _context = context;
         }
 
-        public decimal GetTotalVolume()
+        public object GetPercentForModels()
+        {
+            var sales = _context.Sales;
+            var totalVentas = sales.Count();
+
+            return sales
+                .AsEnumerable()
+                .Join(
+                    inner: _context.Cars,
+                    outerKeySelector: s => s.CarId,
+                    innerKeySelector: c => c.Id,
+                    resultSelector: (s, c) => new { Sale = s, Car = c } // Anonymous type
+                )
+                .GroupBy(x => x.Sale.Car.Model)
+                .ToDictionary(
+                        sg => sg.Key,
+                        sg => (double)sg.Count() / totalVentas * 100
+                    );
+        }
+
         public decimal GetTotalVolume(int? distributionId = null)
         {
             return _context.Sales
