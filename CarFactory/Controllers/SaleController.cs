@@ -2,6 +2,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Modules.CarFactory.Core.Dto;
 using Modules.CarFactory.Core.Features.CreateSale;
+using Modules.CarFactory.Core.Features.GetTotalVolume;
 
 namespace CarFactory.Controllers
 {
@@ -24,6 +25,15 @@ namespace CarFactory.Controllers
             var createSaleRequest = new CreateSaleRequest(sale.CarId, sale.DistributionCenterId);
             var response = await _mediator.Send(createSaleRequest);
             return Created(string.Empty, response.Sale);
+        }
+
+        [HttpGet]
+        [Route("totalVolumes")]
+        public async Task<IActionResult> GetTotalVolume()
+        {
+            var totalVolumeRequest = new GetTotalVolumeRequest();
+            var response = await _mediator.Send(totalVolumeRequest);
+            return Ok(response);
         }
     }
 }

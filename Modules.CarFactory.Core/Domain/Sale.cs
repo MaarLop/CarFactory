@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Modules.CarFactory.Core.Validators;
+using Modules.CarFactory.Validators;
 
 namespace Modules.CarFactory.Core.Domain
 {
@@ -16,5 +16,7 @@ namespace Modules.CarFactory.Core.Domain
         [MustBePositiveAttribute]
         public int DistributionCenterId { get; set; } = distributionCenterId;
         public DateTime DateTime { get; set; } = DateTime.UtcNow;
+
+        public virtual Car Car { get; set; }
     }
 }

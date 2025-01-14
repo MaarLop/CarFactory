@@ -12,6 +12,20 @@ namespace Modules.CarFactory.Infraestructure
         {
             _context = context;
         }
+
+        public decimal GetTotalVolume()
+        {
+            return _context.Sales
+                .Join(
+                    inner: _context.Cars,
+                    outerKeySelector: s => s.CarId,
+                    innerKeySelector: c => c.Id,
+                    resultSelector: (s, c) => new { Sale = s, Car = c } // Anonymous type
+                )
+                .AsEnumerable() // Force client-side evaluation
+                .Sum(joinedData => joinedData.Car.GetSellingPrice(true));
+        }
+
         public Sale Save(Sale sale)
         {
             _context.Sales.Add(sale);
