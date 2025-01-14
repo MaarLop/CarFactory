@@ -1,3 +1,6 @@
+using Microsoft.Extensions.DependencyInjection;
+using Modules.CarFactory.Exensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -10,7 +13,12 @@ builder.Services.AddCors(options =>
                .AllowAnyHeader();
     });
 });
-builder.Services.AddControllers();
+
+builder.Services.AddSaleModule();
+builder.Services.AddControllers(options =>
+{
+    options.ModelValidatorProviders.Add(new MustBePositive()); // Agregar un proveedor de validación personalizado
+});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
