@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Modules.CarFactory.Core.Domain
+﻿namespace Modules.CarFactory.Core.Domain
 {
-    public class Sale
+    public class Sale(int carId, int distributionCenterId)
     {
         public int Id { get; set; }
-        public int CarId { get; set; }
-        public int DistributionCenterId { get; set; }
+        public int CarId { get; set; } = carId;
+        public int DistributionCenterId { get; set; } = distributionCenterId;
+        public DateTime DateTime { get; set; } = DateTime.UtcNow;
     }
 }
