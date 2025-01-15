@@ -11,13 +11,16 @@ namespace Modules.CarFactory.Infraestructure
 
         public SaleDbContext(DbContextOptions<SaleDbContext> optionsBuilder) : base(optionsBuilder)
         {
-            Cars.AddRange(new List<Car>
+            if (!Cars.Any())
             {
-                new Sport(),
-                new Offroad(),
-                new Sedan(),
-                new Suv()
-            });
+                Cars.AddRange(new List<Car>
+                {
+                    new Sport(),
+                    new Offroad(),
+                    new Sedan(),
+                    new Suv()
+                });
+            }
         }
     }
 }
