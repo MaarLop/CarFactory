@@ -13,23 +13,23 @@ namespace Modules.CarFactory.Infraestructure
             _context = context;
         }
 
-        public object GetPercentForModels()
+        public Dictionary<string, decimal> GetPercentForModels()
         {
             var sales = _context.Sales;
             var totalVentas = sales.Count();
 
             return sales
-                .AsEnumerable()
                 .Join(
                     inner: _context.Cars,
                     outerKeySelector: s => s.CarId,
                     innerKeySelector: c => c.Id,
-                    resultSelector: (s, c) => new { Sale = s, Car = c } // Anonymous type
+                    resultSelector: (s, c) => new { Sale = s, Car = c }
                 )
-                .GroupBy(x => nameof(x.Sale.Car))
+                .AsEnumerable()
+                .GroupBy(x => x.Sale.Car.Model)
                 .ToDictionary(
                         sg => sg.Key,
-                        sg => (double)sg.Count() / totalVentas * 100
+                        sg => (decimal)sg.Count() / totalVentas * 100
                     );
         }
 
@@ -43,7 +43,6 @@ namespace Modules.CarFactory.Infraestructure
                     innerKeySelector: c => c.Id,
                     resultSelector: (s, c) => new { Sale = s, Car = c } // Anonymous type
                 )
-                .AsEnumerable() // Force client-side evaluation
                 .Sum(joinedData => joinedData.Car.Price);
         }
 

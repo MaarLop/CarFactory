@@ -9,7 +9,7 @@ namespace Modules.CarFactory.Core.Abstractions
 {
     public interface ISaleRepository
     {
-        object GetPercentForModels();
+        Dictionary<string, decimal> GetPercentForModels();
         decimal GetTotalVolume(int? distributionId = null);
         Sale Save(Sale sale);
     }

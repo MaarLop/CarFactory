@@ -53,7 +53,7 @@ namespace CarFactory.Controllers
         {
             var totalVolumeRequest = new GetPercentOfModelsRequest();
             var response = await _mediator.Send(totalVolumeRequest);
-            return Ok(response);
+            return Ok(response.SalesByModel);
         }
     }
 }

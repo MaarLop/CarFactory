@@ -19,7 +19,6 @@ namespace Modules.CarFactory.Core.Features.GetPercentOfModels
         public Task<GetPercentOfModelsResponse> Handle(GetPercentOfModelsRequest request, CancellationToken cancellationToken)
         {
             var salesByModel = _repository.GetPercentForModels();
-            //TODO: Generate a model for display info in response
             return Task.FromResult(new GetPercentOfModelsResponse(salesByModel));
         }
     }

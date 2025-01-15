@@ -2,11 +2,11 @@
 {
     public class GetPercentOfModelsResponse
     {
-        private object salesByModel;
+        public Dictionary<string, decimal> SalesByModel;
 
-        public GetPercentOfModelsResponse(object salesByModel)
+        public GetPercentOfModelsResponse(Dictionary<string, decimal> salesByModel)
         {
-            this.salesByModel = salesByModel;
+            SalesByModel = salesByModel;
         }
     }
 }

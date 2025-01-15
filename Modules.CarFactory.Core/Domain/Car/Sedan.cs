@@ -5,6 +5,7 @@
         public Sedan()
         {
             Price = 8000;
+            Model = nameof(Sedan);
         }
     }
 }

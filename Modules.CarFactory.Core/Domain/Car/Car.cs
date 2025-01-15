@@ -12,5 +12,6 @@ namespace Modules.CarFactory.Core.Domain.Car
 
         public decimal Price { get;  set; }
 
+        public string Model { get; set; }
     }
 }
