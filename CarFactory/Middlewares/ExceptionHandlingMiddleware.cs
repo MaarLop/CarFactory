@@ -19,7 +19,7 @@ namespace Modules.CarFactory.Middlewares
             {
                 await _next(context);
             }
-            catch (ArgumentException _)
+            catch (ArgumentException)
             {
                 await HandleExceptionAsync(context, StatusCodes.Status400BadRequest, BadRequestMessage);
             }

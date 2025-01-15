@@ -7,7 +7,7 @@ namespace Modules.CarFactory.Core.Features.CreateSale
 {
     public class CreateSaleHandler : IRequestHandler<CreateSaleRequest, CreateSaleResponse>
     {
-        private ISaleRepository _saleRepository;
+        private readonly ISaleRepository _saleRepository;
 
         public CreateSaleHandler(ISaleRepository saleRepository)
         {

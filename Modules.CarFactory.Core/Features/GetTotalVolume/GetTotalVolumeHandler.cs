@@ -5,7 +5,7 @@ namespace Modules.CarFactory.Core.Features.GetTotalVolume
 {
     internal class GetTotalVolumeHandler : IRequestHandler<GetTotalVolumeRequest, GetTotalVolumeResponse>
     {
-        private ISaleRepository _saleRepository;
+        private readonly ISaleRepository _saleRepository;
 
         public GetTotalVolumeHandler(ISaleRepository saleRepository)
         {

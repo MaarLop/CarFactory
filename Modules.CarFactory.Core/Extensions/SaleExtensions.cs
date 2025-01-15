@@ -5,6 +5,6 @@ namespace Modules.CarFactory.Core.Extensions
 {
     public static class SaleExtensions
     {
-        public static SaleModel ToModel(this Sale sale) => new SaleModel(sale.Id, sale.CarId, sale.DistributionCenterId, sale.DateTime);
+        public static SaleModel ToModel(this Sale sale) => new(sale.Id, sale.CarId, sale.DistributionCenterId, sale.DateTime);
     }
 }

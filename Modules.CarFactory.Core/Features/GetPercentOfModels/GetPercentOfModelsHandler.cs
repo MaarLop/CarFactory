@@ -5,7 +5,7 @@ namespace Modules.CarFactory.Core.Features.GetPercentOfModels
 {
     internal class GetPercentOfModelsHandler : IRequestHandler<GetPercentOfModelsRequest, GetPercentOfModelsResponse>
     {
-        private ISaleRepository _repository;
+        private readonly ISaleRepository _repository;
 
         public GetPercentOfModelsHandler(ISaleRepository repository)
         {

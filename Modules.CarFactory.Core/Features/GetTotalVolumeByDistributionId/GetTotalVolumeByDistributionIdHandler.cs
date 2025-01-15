@@ -5,7 +5,7 @@ namespace Modules.CarFactory.Core.Features.GetTotalVolumeByDistributionId
 {
     internal class GetTotalVolumeByDistributionIdHandler : IRequestHandler<GetTotalVolumeByDistributionIdRequest, GetTotalVolumeByDistributionIdResponse>
     {
-        private ISaleRepository _repository;
+        private readonly ISaleRepository _repository;
 
         public GetTotalVolumeByDistributionIdHandler(ISaleRepository repository)
         {
