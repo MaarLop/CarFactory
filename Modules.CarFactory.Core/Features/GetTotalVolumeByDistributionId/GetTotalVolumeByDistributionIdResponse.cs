@@ -3,9 +3,11 @@
     public class GetTotalVolumeByDistributionIdResponse
     {
         public decimal TotalVolume { get; set; }
+        public int DistributionCenterId { get; set; }
 
-        public GetTotalVolumeByDistributionIdResponse(decimal total)
+        public GetTotalVolumeByDistributionIdResponse(int distributionId, decimal total)
         {
+            DistributionCenterId = distributionId;
             TotalVolume = total;
         }
 

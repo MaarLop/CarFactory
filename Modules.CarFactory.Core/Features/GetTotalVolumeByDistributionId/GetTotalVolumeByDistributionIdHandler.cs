@@ -21,11 +21,11 @@ namespace Modules.CarFactory.Core.Features.GetTotalVolumeByDistributionId
         {
             if(request.DistributionCenterId < 1)
             {
-                throw new ArgumentException("");
+                throw new ArgumentException("The distributionCenterId must be greater then 0");
             }
             var total = _repository.GetTotalVolume(request.DistributionCenterId);
 
-            return Task.FromResult(new GetTotalVolumeByDistributionIdResponse(total));
+            return Task.FromResult(new GetTotalVolumeByDistributionIdResponse(request.DistributionCenterId, total));
         }
     }
 }
