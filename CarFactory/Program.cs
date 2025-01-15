@@ -1,5 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using Modules.CarFactory.Exensions;
+using Modules.CarFactory.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +29,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseMiddleware<ExceptionHandlingMiddleware>();
+app.UseMiddleware<TimerMiddleware>();
 
 app.UseCors("AllowAll");
 
