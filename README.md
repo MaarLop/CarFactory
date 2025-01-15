@@ -2,6 +2,8 @@
 
 This API provides functionalities for managing sales of cars through a distribution network. It utilizes a MediatR-based architecture for handling requests and responses.
 
+In this beta version it is implemented with a memory database.
+
 **Features:**
 
 * Create a Sale: Create a new sale record for a car associated with a distribution center.
