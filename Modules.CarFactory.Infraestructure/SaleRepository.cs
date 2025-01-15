@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Modules.CarFactory.Core.Abstractions;
+﻿using Modules.CarFactory.Core.Abstractions;
 using Modules.CarFactory.Core.Domain;
 
 namespace Modules.CarFactory.Infraestructure

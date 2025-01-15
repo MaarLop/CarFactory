@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Modules.CarFactory.Core.Domain;
+﻿using Modules.CarFactory.Core.Domain;
 
 namespace Modules.CarFactory.Core.Abstractions
 {
     public interface ISaleRepository
     {
         Dictionary<string, decimal> GetPercentForModels();
+
         decimal GetTotalVolume(int? distributionId = null);
+
         Sale Save(Sale sale);
     }
 }

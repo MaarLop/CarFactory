@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Modules.CarFactory.Core.Domain;
-using Modules.CarFactory.Core.Features.CreateSale;
-using Modules.CarFactory.UT.Mothers;
-using Moq;
+﻿using Modules.CarFactory.Core.Features.CreateSale;
 
 namespace Modules.CarFactory.UT.Handlers
 {
@@ -16,7 +8,7 @@ namespace Modules.CarFactory.UT.Handlers
         public async Task CreateASaleWithCorrectParamsReturnsTheCreatedObject()
         {
             var createSaleRequest = new CreateSaleRequest(1, 1);
-            
+
             var response = _saleHandler.Handle(createSaleRequest, new CancellationToken());
 
             Assert.NotNull(response);

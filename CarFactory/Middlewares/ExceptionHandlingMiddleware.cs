@@ -1,5 +1,5 @@
 ﻿using System.Text.Json;
-using Microsoft.AspNetCore.Http;
+
 namespace Modules.CarFactory.Middlewares
 {
     public class ExceptionHandlingMiddleware
@@ -32,7 +32,7 @@ namespace Modules.CarFactory.Middlewares
         private static Task HandleExceptionAsync(HttpContext context, int statusCode, string message)
         {
             context.Response.ContentType = "application/json";
-      
+
             var errorResponse = new
             {
                 StatusCode = context.Response.StatusCode,
@@ -43,5 +43,4 @@ namespace Modules.CarFactory.Middlewares
             return context.Response.WriteAsync(errorJson);
         }
     }
-
 }

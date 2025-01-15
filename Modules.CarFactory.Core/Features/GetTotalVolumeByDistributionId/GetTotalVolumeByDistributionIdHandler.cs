@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MediatR;
+﻿using MediatR;
 using Modules.CarFactory.Core.Abstractions;
 
 namespace Modules.CarFactory.Core.Features.GetTotalVolumeByDistributionId
 {
-    internal class GetTotalVolumeByDistributionIdHandler : IRequestHandler<GetTotalVolumeByDistributionIdRequest , GetTotalVolumeByDistributionIdResponse>
+    internal class GetTotalVolumeByDistributionIdHandler : IRequestHandler<GetTotalVolumeByDistributionIdRequest, GetTotalVolumeByDistributionIdResponse>
     {
         private ISaleRepository _repository;
 
@@ -19,7 +14,7 @@ namespace Modules.CarFactory.Core.Features.GetTotalVolumeByDistributionId
 
         public Task<GetTotalVolumeByDistributionIdResponse> Handle(GetTotalVolumeByDistributionIdRequest request, CancellationToken cancellationToken)
         {
-            if(request.DistributionCenterId < 1)
+            if (request.DistributionCenterId < 1)
             {
                 throw new ArgumentException("The distributionCenterId must be greater then 0");
             }

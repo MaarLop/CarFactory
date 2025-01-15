@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Modules.CarFactory.Core.Domain;
-using Modules.CarFactory.Core.Models;
+﻿using Modules.CarFactory.Core.Domain;
 
 namespace Modules.CarFactory.UT.Mothers
 {

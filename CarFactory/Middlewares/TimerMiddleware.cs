@@ -1,9 +1,5 @@
-﻿using Modules.CarFactory.Middlewares;
-
-namespace Modules.CarFactory.Middlewares
+﻿namespace Modules.CarFactory.Middlewares
 {
-
-
     public class TimerMiddleware
     {
         private readonly RequestDelegate _next;
@@ -46,4 +42,3 @@ namespace Modules.CarFactory.Middlewares
         }
     }
 }
-

@@ -13,6 +13,7 @@ namespace Modules.CarFactory.Core.Features.CreateSale
         {
             _saleRepository = saleRepository;
         }
+
         public Task<CreateSaleResponse> Handle(CreateSaleRequest request, CancellationToken cancellationToken)
         {
             /*Here we can check if the carId and the distributionCenterId exists

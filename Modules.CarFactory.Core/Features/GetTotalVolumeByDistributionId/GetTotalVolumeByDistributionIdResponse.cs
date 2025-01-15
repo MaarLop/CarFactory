@@ -10,6 +10,5 @@
             DistributionCenterId = distributionId;
             TotalVolume = total;
         }
-
     }
 }

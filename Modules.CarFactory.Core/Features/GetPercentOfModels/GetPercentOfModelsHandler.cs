@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MediatR;
+﻿using MediatR;
 using Modules.CarFactory.Core.Abstractions;
 
 namespace Modules.CarFactory.Core.Features.GetPercentOfModels
@@ -16,6 +11,7 @@ namespace Modules.CarFactory.Core.Features.GetPercentOfModels
         {
             _repository = repository;
         }
+
         public Task<GetPercentOfModelsResponse> Handle(GetPercentOfModelsRequest request, CancellationToken cancellationToken)
         {
             var salesByModel = _repository.GetPercentForModels();

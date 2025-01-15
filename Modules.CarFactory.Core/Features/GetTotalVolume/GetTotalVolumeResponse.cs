@@ -2,7 +2,7 @@
 {
     public class GetTotalVolumeResponse
     {
-        public decimal Total {  get; set; }
+        public decimal Total { get; set; }
 
         public GetTotalVolumeResponse(decimal total)
         {

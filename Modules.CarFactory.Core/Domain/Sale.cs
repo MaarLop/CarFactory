@@ -1,8 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Modules.CarFactory.Core.Domain.Car;
-using Modules.CarFactory.Validators;
-
-namespace Modules.CarFactory.Core.Domain
+﻿namespace Modules.CarFactory.Core.Domain
 {
     public class Sale
     {
@@ -21,7 +17,7 @@ namespace Modules.CarFactory.Core.Domain
             {
                 throw new ArgumentException("CardId must be greater than 0");
             }
-            if (distributionCenterId<= 0)
+            if (distributionCenterId <= 0)
             {
                 throw new ArgumentException("CardId must be greater than 0");
             }
