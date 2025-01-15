@@ -5,7 +5,7 @@ using Modules.CarFactory.Core.Extensions;
 
 namespace Modules.CarFactory.Core.Features.CreateSale
 {
-    internal class CreateSaleHandler : IRequestHandler<CreateSaleRequest, CreateSaleResponse>
+    public class CreateSaleHandler : IRequestHandler<CreateSaleRequest, CreateSaleResponse>
     {
         private ISaleRepository _saleRepository;
 
